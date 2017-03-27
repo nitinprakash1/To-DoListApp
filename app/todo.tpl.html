@@ -1,0 +1,42 @@
+<h3>{{title}}</h3>
+<input type="text" [(ngModel)]="searchedId">
+<button (click)="getToDobyId()">Search</button>
+
+<table *ngIf="todo">
+    <tr>
+        <td>UserId</td>
+        <td><input type="text" [(ngModel)]="todo.userId"></td>
+    </tr>
+    <tr>
+        <td>Id</td>
+<td><input type="text" [(ngModel)]="todo.id"></td>
+    </tr>
+    <tr>
+        <td>Title</td>
+        <td><input type="text" [(ngModel)]="todo.title"></td>
+    </tr>
+    <tr>
+        <td>IsCompleted</td>
+        <td><input type="checkbox" [(ngModel)]="todo.completed"></td>
+    </tr>
+    <tr>
+        <td></td>
+        <td><button (click)="saveToDo()">Add</button></td>
+    </tr>
+</table>
+
+
+<table>
+    <tr>
+        <td>User Id</td>
+        <td>Id</td>
+        <td>title</td>
+        <td>IsCompelted</td>
+    </tr>
+    <tr *ngFor="#item of todoItems">
+        <td>{{item.userId}}</td>
+        <td>{{item.id}}</td>
+        <td>{{item.title}}</td>
+        <td>{{item.completed}}</td>
+    </tr>
+</table>
